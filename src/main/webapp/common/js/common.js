@@ -24,7 +24,8 @@ util.initSelectBox = function (id, groupCode, value, select, service) {
     util.requestSync(serv, reqData, 'POST',
         function (data) {
       var obj = $('#' + id).get(0);
-      obj.options.length = 0;
+      // noinspection JSAnnotator
+            obj.options.length = 0;
       if(select == "Y") obj.add(new Option("-select-",""));
 
       for(var i = 0 ; i < data.codeList.length ; i++){
